@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  font-family: 'Roboto Slab', serif;
+  font-size: 18px;
+}
+
+header {
+  height: 100px;
+  background-color: #25424e;
+}
+
+header a {
+  color: white;
+}
+
+#header {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+section, #footer {
+  width: 100%;
+  max-width: 940px;
+  padding: 30px 15px;
+  margin: 0 auto;
+}
+
+#welcome {
+  background-color: #3cce74;
+}
+
+#portfolio {
+  background-color: #ce8f39;
+}
+
+#about {
+  background-color: #2f8db6;
+}
+
+#contact {
+  background-color: #ce3832;
+}
+
+footer {
+
+}
