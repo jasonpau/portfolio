@@ -24,19 +24,24 @@
   <main>
     <div id="welcome">
       <section>
-        <h1>Hi! I'm Jason, and I'm a web developer.</h1>
+        <h1>Hi, I'm Jason!</h1>
+        <hr />
+        <p>Web developer, designer, enthusiast for </p>
       </section>
     </div>
 
     <div id="portfolio">
-      <section id="portfolio">
+      <section>
         <h1>Portfolio</h1>
+        <hr />
+        <div></div>
       </section>
     </div>
 
     <div id="about">
-      <section id="about">
+      <section>
         <h1>About</h1>
+        <hr />
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eius eos ex magnam minima praesentium quae quas quisquam reprehenderit sunt! Atque cupiditate, delectus deserunt eligendi facere fugit id illum iste laboriosam nemo officia quaerat quasi quod recusandae repellendus, sequi sunt ut! Aperiam distinctio nihil odio sapiente tenetur? Ab adipisci, et harum incidunt numquam perspiciatis quae quam similique. Aliquam amet at delectus dignissimos dolores excepturi expedita in ipsa, iusto nam natus nisi nulla numquam provident quam, quas quasi quidem reiciendis rem saepe sint totam voluptas. Asperiores et, explicabo fugit harum modi nam nihil odio odit, optio quos, sint totam velit voluptatibus.</p>
         <aside>
           Icons for various tech skills go here...
@@ -46,8 +51,12 @@
     </div>
 
     <div id="contact">
-      <section id="contact">
+      <section>
         <h1>Contact</h1>
+        <hr />
+        <form>
+          <input type="text" />
+        </form>
       </section>
     </div>
   </main>
