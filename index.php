@@ -124,13 +124,14 @@
       </p>
       <p>
         <script type="text/javascript">
-          var a = 'jason@';
+          var a = 'dev@';
           var b = 'jasonp';
           var c = 'au.com';
           var d = 'lto:';
           document.write('<a href="mai' + d + a + b + c + '" target="_blank">' + a + b + c + '</a>');
         </script>
       </p>
+      <p class="copyright">Copyright &copy; 2017 Jason Pau. All Rights Reserved.</p>
     </div>
   </footer>
 </body>
