@@ -1,16 +1,28 @@
 /*===============================================
  SASS elements
  */
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0; }
+
+/* Header color palette */
+/* Contact color palette */
 /*===============================================
  Global Styling
  */
-* {
-  box-sizing: border-box; }
-
 body {
-  margin: 80px 0 0 0;
-  font-family: "Roboto Slab", serif;
+  margin-top: 80px;
+  font-family: "Roboto Slab", Georgia, serif;
   font-size: 18px; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.5em 0; }
 
 h1 {
   font-size: 48px; }
@@ -18,12 +30,14 @@ h1 {
 h2 {
   font-size: 36px; }
 
-h2 {
+h3 {
   font-size: 24px; }
 
 hr {
   border: 0;
-  border-top: 2px solid white; }
+  border-top: 3px solid white;
+  width: 50%;
+  min-width: 300px; }
 
 p {
   text-align: left; }
@@ -39,8 +53,9 @@ header {
   height: 80px;
   background-color: #25424e; }
   header #header-content {
-    max-width: 1170px;
+    width: 100%;
     margin: 0 auto;
+    max-width: 1170px;
     position: relative;
     height: 100%; }
   header .logo {
@@ -67,35 +82,26 @@ header {
  Main Content
  */
 .content-box {
-  max-width: 1170px;
+  width: 100%;
   margin: 0 auto;
+  max-width: 1170px;
   width: 100%;
   padding: 50px 5%;
   text-align: center; }
 
-#welcome-content {
-  background-color: #3cce74; }
-
 #portfolio-content {
   background-color: #ce8f39; }
-
-#about-content {
-  background-color: #e1e0c7; }
 
 #contact-content {
   background-color: #ce3832; }
 
-#about-content img {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  border-radius: 10px;
-  width: 180px;
-  height: auto;
-  vertical-align: middle;
-  margin: 15px;
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 15px; }
+/*===============================================
+ Welcome Intro
+ */
+#welcome-content {
+  background-color: #3cce74; }
+  #welcome-content p {
+    text-align: center; }
 
 /*===============================================
  Portfolio
@@ -112,34 +118,60 @@ header {
 #portfolio-content .application-box:hover {
   background-color: #fffee2; }
 
-/* :last-of-type */
+/*===============================================
+ About / Tech icons
+ */
+#about-content {
+  background-color: #e1e0c7; }
+  #about-content img {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    width: 120px;
+    height: auto;
+    vertical-align: middle;
+    margin: 15px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 15px; }
+
 /*===============================================
  Contact Form
  */
-form input,
-form textarea {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  border-radius: 5px;
+form {
   width: 100%;
-  padding: 10px;
-  margin: 15px 0;
-  border: 0;
-  font-family: "Roboto Slab", serif;
-  font-size: 18px; }
-
-form button {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  border-radius: 5px;
-  padding: 10px 30px;
-  background-color: orangered;
-  border: 0;
-  font-family: "Roboto Slab", serif;
-  font-size: 18px;
-  color: white; }
+  margin: 0 auto;
+  max-width: 700px; }
+  form input,
+  form textarea {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border: 0;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size: 18px; }
+  form button {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    padding: 10px 30px;
+    background-color: white;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ce3832;
+    border: 0;
+    border-bottom: 2px solid #7c211e; }
+  form button:hover {
+    color: rgba(206, 56, 50, 0.5); }
+  form button:active {
+    border: 0;
+    border-top: 2px solid #7c211e; }
 
 #form-value {
   display: none; }

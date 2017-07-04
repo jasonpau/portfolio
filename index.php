@@ -32,7 +32,7 @@
 
     <div id="portfolio-content" name="portfolio">
       <section class="content-box">
-        <h1>Portfolio</h1>
+        <h2>Portfolio</h2>
         <hr />
         <section class="application-box">
 
@@ -57,39 +57,44 @@
 
     <div id="about-content" name="about">
       <section class="content-box">
-        <h1>About</h1>
+        <h2>About</h2>
         <hr />
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eius eos ex magnam minima praesentium quae quas quisquam reprehenderit sunt! Atque cupiditate, delectus deserunt eligendi facere fugit id illum iste laboriosam nemo officia quaerat quasi quod recusandae repellendus, sequi sunt ut! Aperiam distinctio nihil odio sapiente tenetur? Ab adipisci, et harum incidunt numquam perspiciatis quae quam similique. Aliquam amet at delectus dignissimos dolores excepturi expedita in ipsa, iusto nam natus nisi nulla numquam provident quam, quas quasi quidem reiciendis rem saepe sint totam voluptas. Asperiores et, explicabo fugit harum modi nam nihil odio odit, optio quos, sint totam velit voluptatibus.</p>
-        <section class="icons-technologies">
-          <h2>Technologies</h2>
+        <section class="icons">
+          <h3>Technologies</h3>
+          <hr />
           <img src="images/javascript-original.svg" alt="" title="" />
           <img src="images/jquery-original-wordmark.svg" alt="" title="" />
           <img src="images/html5-original-wordmark.svg" alt="" title="" />
           <img src="images/css3-original-wordmark.svg" alt="" title="" />
+          <img src="images/bootstrap-plain-wordmark.svg" alt="" title="" />
+          <img src="images/sass-original.svg" alt="" title="" />
           <img src="images/react-original-wordmark.svg" alt="" title="" />
           <img src="images/php-plain.svg" alt="" title="" />
           <img src="images/mysql-original-wordmark.svg" alt="" title="" />
           <img src="images/drupal-original-wordmark.svg" alt="" title="" />
           <img src="images/wordpress-original.svg" alt="" title="" />
         </section>
-        <section class="icons-tools">
-          <h2>Tools & Workflow</h2>
+        <section class="icons">
+          <h3>Tools & Workflow</h3>
+          <hr />
           <img src="images/git-original-wordmark.svg" alt="Git" title="Git" />
           <img src="images/github-original-wordmark.svg" alt=GitHub" title="GitHub" />
+          <img src="images/npm-original-wordmark.svg" alt="Node Packet Manager" title="Node Packet Manager" />
           <img src="images/phpstorm-original-wordmark.svg" alt="PhpStorm" title="PhpStorm" />
           <img src="images/slack-original-wordmark.svg" alt="Slack" title="Slack" />
           <img src="images/illustrator-plain.svg" alt="" title="" />
           <img src="images/photoshop-plain.svg" alt="" title="" />
           <!-- todo add meistertask logo? -->
         </section>
-        <a href="assets/jason_pau_resume.pdf" target="_blank">Learn More</a>
+        <a href="assets/jason_pau_resume.pdf" id="button-learn-more" target="_blank">Learn More</a>
       </section>
     </div>
 
     <div id="contact-content">
       <a name="contact"></a>
       <section class="content-box">
-        <h1>Contact</h1>
+        <h2>Contact</h2>
         <hr />
         <form method="post" action="contact_handler.php">
         <input type="text" name="name" id="form-name" placeholder="Name" />
