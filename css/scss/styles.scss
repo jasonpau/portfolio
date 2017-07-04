@@ -1,0 +1,272 @@
+/*===============================================
+ SASS elements
+ */
+
+@import 'reset';
+
+$serif-fonts: 'Roboto Slab', Georgia, serif;
+$normal-font-size: 18px;
+$normal-radius: 5px;
+
+/* Header color palette */
+$header-bg-color: #25424e;
+$header-bg-color-d: darken( $header-bg-color, 20% );
+$header-bg-color-l: lighten( $header-bg-color, 20% );
+
+$welcome-bg-color: #3cce74;
+$portfolio-bg-color: #ce8f39;
+$about-bg-color: #e1e0c7;
+
+/* Contact color palette */
+$contact-bg-color: #ce3832;
+$contact-bg-color-d: darken( $contact-bg-color, 20% );
+$contact-bg-color-l: lighten( $contact-bg-color, 20% );
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin content-centered-base {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@mixin normal-content-centered {
+  @include content-centered-base;
+  max-width: 1170px;
+}
+
+@mixin small-content-centered {
+  @include content-centered-base;
+  max-width: 940px;
+}
+
+@mixin x-small-content-centered {
+  @include content-centered-base;
+  max-width: 700px;
+}
+
+@mixin center-vertical-absolute {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*===============================================
+ Global Styling
+ */
+
+body {
+  margin-top: 80px;
+  font-family: $serif-fonts;
+  font-size: $normal-font-size;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.5em 0;
+}
+
+h1 { font-size: 48px; }
+
+h2 { font-size: 36px; }
+
+h3 { font-size: 24px; }
+
+hr {
+  border: 0;
+  border-top: 3px solid white;
+  width: 50%;
+  min-width: 300px;
+}
+
+p {
+  text-align: left;
+}
+
+/*===============================================
+ Header
+ */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: $header-bg-color;
+
+  #header-content {
+    @include normal-content-centered();
+    position: relative;
+    height: 100%;
+  }
+
+  .logo {
+    @include center-vertical-absolute;
+    left: 5%;
+    font-size: 22px;
+    color: white;
+    font-weight: bold;
+  }
+
+  nav {
+    @include center-vertical-absolute;
+    right: 5%;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+  }
+
+  a:hover {
+    background-color: rgba(255,255,255,0.2);
+  }
+}
+
+/*===============================================
+ Main Content
+ */
+
+.content-box {
+  @include normal-content-centered();
+  width: 100%;
+  padding: 50px 5%;
+  text-align: center;
+}
+
+#portfolio-content {
+  background-color: $portfolio-bg-color;
+}
+
+
+#contact-content {
+  background-color: $contact-bg-color;
+}
+
+/*===============================================
+ Welcome Intro
+ */
+
+#welcome-content {
+  background-color: $welcome-bg-color;
+
+  p {
+    text-align: center;
+  }
+}
+
+/*===============================================
+ Portfolio
+ */
+
+#portfolio-content {
+  .content-box {
+    text-align: center;
+  }
+
+  .application-box {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    background-color: #e1e0c7;
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .application-box:hover {
+    background-color: #fffee2;
+  }
+}
+
+/*===============================================
+ About / Tech icons
+ */
+
+#about-content {
+  background-color: $about-bg-color;
+
+  img {
+    @include border-radius(5px);
+    width: 120px;
+    height: auto;
+    vertical-align: middle;
+    margin: 15px;
+    background-color: rgba(white, 0.5);
+    padding: 15px;
+  }
+}
+
+/*===============================================
+ Contact Form
+ */
+
+form {
+  @include x-small-content-centered;
+
+  input,
+  textarea {
+    @include border-radius($normal-radius);
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border: 0;
+    font-family: $serif-fonts;
+    font-size: $normal-font-size;
+  }
+
+  button {
+    @include border-radius($normal-radius);
+    padding: 10px 30px;
+    background-color: white;
+    font-family: $serif-fonts;
+    font-size: $normal-font-size;
+    font-weight: bold;
+    color: $contact-bg-color;
+    border: 0;
+    border-bottom: 2px solid $contact-bg-color-d;
+  }
+
+  button:hover {
+    color: rgba($contact-bg-color, 0.5);
+  }
+
+  button:active {
+    border: 0;
+    border-top: 2px solid $contact-bg-color-d;
+  }
+}
+
+#form-value {
+  display: none;
+}
+
+/*===============================================
+ Footer
+ */
+
+footer {
+  text-align: center;
+
+  p {
+    text-align: center;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .icons-social img {
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+  }
+
+  .copyright {
+    font-size: 14px;
+  }
+}
