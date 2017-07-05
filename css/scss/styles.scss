@@ -13,9 +13,20 @@ $header-bg-color: #25424e;
 $header-bg-color-d: darken( $header-bg-color, 20% );
 $header-bg-color-l: lighten( $header-bg-color, 20% );
 
+/* Welcome color palette */
 $welcome-bg-color: #3cce74;
+$welcome-bg-color-d: darken( $welcome-bg-color, 20% );
+$welcome-bg-color-l: lighten( $welcome-bg-color, 20% );
+
+/* Portfolio color palette */
 $portfolio-bg-color: #ce8f39;
+$portfolio-bg-color-d: darken( $portfolio-bg-color, 20% );
+$portfolio-bg-color-l: lighten( $portfolio-bg-color, 20% );
+
+/* About color palette */
 $about-bg-color: #e1e0c7;
+$about-bg-color-d: darken( $about-bg-color, 20% );
+$about-bg-color-l: lighten( $about-bg-color, 20% );
 
 /* Contact color palette */
 $contact-bg-color: #ce3832;
@@ -27,6 +38,12 @@ $contact-bg-color-l: lighten( $contact-bg-color, 20% );
   -moz-border-radius: $radius;
   -ms-border-radius: $radius;
   border-radius: $radius;
+}
+
+@mixin vertical-box-shadow($size, $color) {
+  -webkit-box-shadow: 0 $size 0 $color;
+  -moz-box-shadow: 0 $size 0 $color;
+  box-shadow: 0 $size 0 $color;
 }
 
 @mixin content-centered-base {
@@ -55,6 +72,38 @@ $contact-bg-color-l: lighten( $contact-bg-color, 20% );
   transform: translateY(-50%);
 }
 
+@mixin button-white($color, $color-d) {
+  @include border-radius($normal-radius);
+  padding: 10px 30px;
+  color: $color;
+  font-family: $serif-fonts;
+  font-size: $normal-font-size;
+  font-weight: bold;
+  border: 0;
+  background-color: white;
+  text-decoration: none;
+}
+
+@mixin button-dark($color, $color-d) {
+  @include border-radius($normal-radius);
+  padding: 10px 30px;
+  color: white;
+  font-family: $serif-fonts;
+  font-size: $normal-font-size;
+  font-weight: bold;
+  border: 0;
+  background-color: $color;
+  text-decoration: none;
+}
+
+@mixin hover-fade($speed) {
+  -webkit-transition: $speed ease-out;
+  -moz-transition: $speed ease-out;
+  -ms-transition: $speed ease-out;
+  -o-transition: $speed ease-out;
+  transition: $speed ease-out;
+}
+
 /*===============================================
  Global Styling
  */
@@ -66,10 +115,11 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0.5em 0;
+  margin: 1em 0 0.5em 0;
+  line-height: 1.1em;
 }
 
-h1 { font-size: 48px; }
+h1 { font-size: 56px; }
 
 h2 { font-size: 36px; }
 
@@ -97,6 +147,7 @@ header {
   width: 100%;
   height: 80px;
   background-color: $header-bg-color;
+  z-index: 1;
 
   #header-content {
     @include normal-content-centered();
@@ -115,12 +166,31 @@ header {
   nav {
     @include center-vertical-absolute;
     right: 5%;
+    @media (max-width: 768px) {
+      top: 80px;
+      background-color: $header-bg-color;
+      transform: none;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  li {
+    list-style: none;
+    display: inline-block;
+    @media (max-width: 768px) {
+      display: block;
+    }
   }
 
   a {
+    @include hover-fade(200ms);
     color: white;
     text-decoration: none;
     padding: 15px;
+    @media (max-width: 768px) {
+      display: block;
+    }
   }
 
   a:hover {
@@ -138,11 +208,6 @@ header {
   padding: 50px 5%;
   text-align: center;
 }
-
-#portfolio-content {
-  background-color: $portfolio-bg-color;
-}
-
 
 #contact-content {
   background-color: $contact-bg-color;
@@ -165,26 +230,30 @@ header {
  */
 
 #portfolio-content {
+  background-color: $portfolio-bg-color;
+
   .content-box {
     text-align: center;
   }
 
   .application-box {
+    @include hover-fade(150ms);
+    @include border-radius($normal-radius);
     display: inline-block;
     width: 300px;
     height: 300px;
-    background-color: #e1e0c7;
     margin: 15px;
     padding: 15px;
+    background-color: rgba(white, 0.7);
   }
 
   .application-box:hover {
-    background-color: #fffee2;
+    background-color: rgba(white, 1);
   }
 }
 
 /*===============================================
- About / Tech icons
+ About / Icons
  */
 
 #about-content {
@@ -196,8 +265,24 @@ header {
     height: auto;
     vertical-align: middle;
     margin: 15px;
-    background-color: rgba(white, 0.5);
     padding: 15px;
+    background-color: rgba(white, 0.5);
+  }
+
+  .about-action {
+    //@include hover-fade(150ms);
+    @include button-dark($welcome-bg-color, $welcome-bg-color-d);
+    @include vertical-box-shadow(3px, $welcome-bg-color-d);
+  }
+
+  .about-action:hover {
+    color: $welcome-bg-color-l;
+  }
+
+  .about-action:active {
+    @include vertical-box-shadow(0, $welcome-bg-color-d);
+    position: relative;
+    top: 3px;
   }
 }
 
@@ -220,24 +305,19 @@ form {
   }
 
   button {
-    @include border-radius($normal-radius);
-    padding: 10px 30px;
-    background-color: white;
-    font-family: $serif-fonts;
-    font-size: $normal-font-size;
-    font-weight: bold;
-    color: $contact-bg-color;
-    border: 0;
-    border-bottom: 2px solid $contact-bg-color-d;
+    //@include hover-fade(150ms);
+    @include button-white($contact-bg-color, $contact-bg-color-d);
+    @include vertical-box-shadow(3px, $contact-bg-color-d);
   }
 
   button:hover {
-    color: rgba($contact-bg-color, 0.5);
+    color: $contact-bg-color-l;
   }
 
   button:active {
-    border: 0;
-    border-top: 2px solid $contact-bg-color-d;
+    @include vertical-box-shadow(0, $contact-bg-color-d);
+    position: relative;
+    top: 3px;
   }
 }
 
@@ -254,16 +334,33 @@ footer {
 
   p {
     text-align: center;
+
+    a {
+      padding: 0 10px;
+    }
   }
 
   a {
     text-decoration: none;
   }
+  
+  a:hover {
+    text-decoration: underline;
+  }
 
-  .icons-social img {
-    width: 50px;
-    height: 50px;
-    margin: 15px;
+  .icons-social {
+    font-size: 0;
+
+    img {
+      @include hover-fade(150ms);
+      width: 50px;
+      height: 50px;
+      margin: 15px;
+    }
+
+    img:hover {
+      opacity: 0.6;
+    }
   }
 
   .copyright {
