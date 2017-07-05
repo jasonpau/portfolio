@@ -74,6 +74,7 @@ $contact-bg-color-l: lighten( $contact-bg-color, 20% );
 
 @mixin button-white($color, $color-d) {
   @include border-radius($normal-radius);
+  @include vertical-box-shadow(3px, $color-d);
   padding: 10px 30px;
   color: $color;
   font-family: $serif-fonts;
@@ -86,6 +87,7 @@ $contact-bg-color-l: lighten( $contact-bg-color, 20% );
 
 @mixin button-dark($color, $color-d) {
   @include border-radius($normal-radius);
+  @include vertical-box-shadow(3px, $color-d);
   padding: 10px 30px;
   color: white;
   font-family: $serif-fonts;
@@ -155,12 +157,24 @@ header {
     height: 100%;
   }
 
-  .logo {
+  #logo {
     @include center-vertical-absolute;
     left: 5%;
     font-size: 22px;
     color: white;
     font-weight: bold;
+    cursor: pointer;
+  }
+
+  #nav-toggle {
+    @include center-vertical-absolute;
+    @include button-white($header-bg-color, $header-bg-color-d);
+    display: none;
+    position: absolute;
+    right: 5%;
+    @media (max-width: 768px) {
+      display: inline-block;
+    }
   }
 
   nav {
@@ -168,10 +182,11 @@ header {
     right: 5%;
     @media (max-width: 768px) {
       top: 80px;
-      background-color: $header-bg-color;
+      background-color: lighten($header-bg-color, 10%);
       transform: none;
       left: 0;
       right: 0;
+      display: none;
     }
   }
 
@@ -190,6 +205,7 @@ header {
     padding: 15px;
     @media (max-width: 768px) {
       display: block;
+      padding: 15px 5%;
     }
   }
 
@@ -259,6 +275,10 @@ header {
 #about-content {
   background-color: $about-bg-color;
 
+  .icons {
+    margin: 40px 0;
+  }
+
   img {
     @include border-radius(5px);
     width: 120px;
@@ -272,7 +292,6 @@ header {
   .about-action {
     //@include hover-fade(150ms);
     @include button-dark($welcome-bg-color, $welcome-bg-color-d);
-    @include vertical-box-shadow(3px, $welcome-bg-color-d);
   }
 
   .about-action:hover {
@@ -305,9 +324,7 @@ form {
   }
 
   button {
-    //@include hover-fade(150ms);
     @include button-white($contact-bg-color, $contact-bg-color-d);
-    @include vertical-box-shadow(3px, $contact-bg-color-d);
   }
 
   button:hover {
@@ -366,4 +383,67 @@ footer {
   .copyright {
     font-size: 14px;
   }
+}
+
+/*===============================================
+ Footer
+ */
+
+.disable-scroll {
+  overflow-y: hidden;
+}
+
+
+.modal {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: 2;
+  display: none;
+
+  div.button-close {
+    width: 100%;
+    height: 100px;
+    border: 0;
+    background: #f8f8f8;
+    font-size: 72px;
+    color: #aaa;
+    text-align: center;
+  }
+
+  .modal-links {
+    text-align: center;
+
+    a {
+      padding: 5px 10px;
+    }
+  }
+
+  img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+  }
+
+  button.button-close {
+    @include button-dark($contact-bg-color, $contact-bg-color-d);
+  }
+
+  button.button-close:hover {
+    color: $contact-bg-color-l;
+  }
+
+  button.button-close:active {
+    @include vertical-box-shadow(0, $contact-bg-color-d);
+    position: relative;
+    top: 3px;
+  }
+}
+
+.modal-open {
+  display: block;
 }
