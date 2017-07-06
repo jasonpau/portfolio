@@ -16,6 +16,7 @@ ol {
 /* Portfolio color palette */
 /* About color palette */
 /* Contact color palette */
+/* Interface colors */
 /*===============================================
  Global Styling
  */
@@ -242,6 +243,11 @@ form {
     border: 0;
     font-family: "Roboto Slab", Georgia, serif;
     font-size: 18px; }
+  form .form-error {
+    line-height: 1em;
+    text-align: left;
+    margin: -8px 0 5px 0;
+    color: white; }
   form button {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -266,6 +272,18 @@ form {
     box-shadow: 0 0 0 #7c211e;
     position: relative;
     top: 3px; }
+  form #form-submit-message {
+    text-align: center;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold; }
+  form .success {
+    border: 2px solid white;
+    background-color: #7dac36; }
+  form .error {
+    border: 2px solid white;
+    background-color: #ce3832; }
 
 #form-value {
   display: none; }
@@ -358,5 +376,32 @@ footer {
 
 .modal-open {
   display: block; }
+
+/*===============================================
+ Loading Spinner Animation
+ */
+.loading-spinner {
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  border-top: 3px solid white;
+  border-right: 3px solid white;
+  width: 18px;
+  height: 18px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+  margin: -3px 0 0 10px; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
 
 /*# sourceMappingURL=styles.css.map */

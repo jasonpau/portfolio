@@ -33,6 +33,10 @@ $contact-bg-color: #ce3832;
 $contact-bg-color-d: darken( $contact-bg-color, 20% );
 $contact-bg-color-l: lighten( $contact-bg-color, 20% );
 
+/* Interface colors */
+$success-green: #7dac36;
+$error-red: #ce3832;
+
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
@@ -323,6 +327,13 @@ form {
     font-size: $normal-font-size;
   }
 
+  .form-error {
+    line-height: 1em;
+    text-align: left;
+    margin: -8px 0 5px 0;
+    color: white;
+  }
+
   button {
     @include button-white($contact-bg-color, $contact-bg-color-d);
   }
@@ -336,6 +347,25 @@ form {
     position: relative;
     top: 3px;
   }
+
+  #form-submit-message {
+    text-align: center;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .success {
+    border: 2px solid white;
+    background-color: $success-green;
+  }
+
+  .error {
+    border: 2px solid white;
+    background-color: $error-red;
+  }
+
 }
 
 #form-value {
@@ -446,4 +476,32 @@ footer {
 
 .modal-open {
   display: block;
+}
+
+/*===============================================
+ Loading Spinner Animation
+ */
+
+.loading-spinner {
+  border: 3px solid rgba(0,0,0,0.2);
+  border-radius: 50%;
+  border-top: 3px solid white;
+  border-right: 3px solid white;
+  width: 18px;
+  height: 18px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+  margin: -3px 0 0 10px;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

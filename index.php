@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jason Pau - Web Developer</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
+<!--  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">-->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -105,13 +105,18 @@
       <section class="content-box">
         <h2>Contact</h2>
         <hr />
-        <form method="post" action="contact_handler.php">
-        <input type="text" name="name" id="form-name" placeholder="Name" />
+        <form id="form-contact" method="post" action="email_handler.php">
+          <input type="text" name="name" id="form-name" placeholder="Name" />
+          <div class="form-error" id="form-name-error"></div>
           <input type="text" name="email" id="form-email" placeholder="Email" />
+          <div class="form-error" id="form-email-error"></div>
           <input type="text" name="subject" id="form-subject" placeholder="Subject Line" />
-          <input type="text" name="value" id="form-value" placeholder="Optional comments" />
-          <textarea name="message" id="form-message" rows="7" placeholder="Message" ></textarea>
-          <button type="button" id="form-submit" >Send</button>
+          <div class="form-error" id="form-subject-error"></div>
+          <input type="text" name="value" id="form-value" placeholder="Please leave this field empty" />
+          <textarea name="message" id="form-message" rows="7" placeholder="Message"></textarea>
+          <div class="form-error" id="form-message-error"></div>
+          <button type="submit" id="form-submit">Send<div id="button-indicator" class=""></div></button>
+          <p id="form-submit-message"></p>
         </form>
       </section>
     </div>
@@ -231,7 +236,7 @@
     </section>
   </div>
 
-  <script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="js/scripts.js" ></script>
 </body>
 </html>
