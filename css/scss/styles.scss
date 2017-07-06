@@ -8,25 +8,28 @@ $serif-fonts: 'Roboto Slab', Georgia, serif;
 $normal-font-size: 18px;
 $normal-radius: 5px;
 
-/* Header color palette */
+/* Main content colors */
 $header-bg-color: #25424e;
-$header-bg-color-d: darken( $header-bg-color, 20% );
-$header-bg-color-l: lighten( $header-bg-color, 20% );
-
 $welcome-bg-color: #3cce74;
 $portfolio-bg-color: #ce8f39;
 $about-bg-color: #e1e0c7;
-
-/* Contact color palette */
 $contact-bg-color: #ce3832;
-$contact-bg-color-d: darken( $contact-bg-color, 20% );
-$contact-bg-color-l: lighten( $contact-bg-color, 20% );
+
+/* Interface colors */
+$success-green: #7dac36;
+$error-red: #ce3832;
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   -ms-border-radius: $radius;
   border-radius: $radius;
+}
+
+@mixin vertical-box-shadow($size, $color) {
+  -webkit-box-shadow: 0 $size 0 $color;
+  -moz-box-shadow: 0 $size 0 $color;
+  box-shadow: 0 $size 0 $color;
 }
 
 @mixin content-centered-base {
@@ -55,6 +58,40 @@ $contact-bg-color-l: lighten( $contact-bg-color, 20% );
   transform: translateY(-50%);
 }
 
+@mixin button-white($color, $color-d) {
+  @include border-radius($normal-radius);
+  @include vertical-box-shadow(3px, $color-d);
+  padding: 10px 30px;
+  color: $color;
+  font-family: $serif-fonts;
+  font-size: $normal-font-size;
+  font-weight: bold;
+  border: 0;
+  background-color: white;
+  text-decoration: none;
+}
+
+@mixin button-dark($color, $color-d) {
+  @include border-radius($normal-radius);
+  @include vertical-box-shadow(3px, $color-d);
+  padding: 10px 30px;
+  color: white;
+  font-family: $serif-fonts;
+  font-size: $normal-font-size;
+  font-weight: bold;
+  border: 0;
+  background-color: $color;
+  text-decoration: none;
+}
+
+@mixin hover-fade($speed) {
+  -webkit-transition: $speed ease-out;
+  -moz-transition: $speed ease-out;
+  -ms-transition: $speed ease-out;
+  -o-transition: $speed ease-out;
+  transition: $speed ease-out;
+}
+
 /*===============================================
  Global Styling
  */
@@ -66,10 +103,11 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0.5em 0;
+  margin: 1em 0 0.5em 0;
+  line-height: 1.1em;
 }
 
-h1 { font-size: 48px; }
+h1 { font-size: 56px; }
 
 h2 { font-size: 36px; }
 
@@ -97,6 +135,7 @@ header {
   width: 100%;
   height: 80px;
   background-color: $header-bg-color;
+  z-index: 1;
 
   #header-content {
     @include normal-content-centered();
@@ -104,23 +143,56 @@ header {
     height: 100%;
   }
 
-  .logo {
+  #logo {
     @include center-vertical-absolute;
     left: 5%;
     font-size: 22px;
     color: white;
     font-weight: bold;
+    cursor: pointer;
+  }
+
+  #nav-toggle {
+    @include center-vertical-absolute;
+    @include button-white($header-bg-color, darken($header-bg-color, 20%));
+    display: none;
+    position: absolute;
+    right: 5%;
+    @media (max-width: 768px) {
+      display: inline-block;
+    }
   }
 
   nav {
     @include center-vertical-absolute;
     right: 5%;
+    @media (max-width: 768px) {
+      top: 80px;
+      background-color: lighten($header-bg-color, 10%);
+      transform: none;
+      left: 0;
+      right: 0;
+      display: none;
+    }
+  }
+
+  li {
+    list-style: none;
+    display: inline-block;
+    @media (max-width: 768px) {
+      display: block;
+    }
   }
 
   a {
+    @include hover-fade(200ms);
     color: white;
     text-decoration: none;
     padding: 15px;
+    @media (max-width: 768px) {
+      display: block;
+      padding: 15px 5%;
+    }
   }
 
   a:hover {
@@ -138,11 +210,6 @@ header {
   padding: 50px 5%;
   text-align: center;
 }
-
-#portfolio-content {
-  background-color: $portfolio-bg-color;
-}
-
 
 #contact-content {
   background-color: $contact-bg-color;
@@ -165,30 +232,38 @@ header {
  */
 
 #portfolio-content {
+  background-color: $portfolio-bg-color;
+
   .content-box {
     text-align: center;
   }
 
   .application-box {
+    @include hover-fade(150ms);
+    @include border-radius($normal-radius);
     display: inline-block;
     width: 300px;
     height: 300px;
-    background-color: #e1e0c7;
     margin: 15px;
     padding: 15px;
+    background-color: rgba(white, 0.7);
   }
 
   .application-box:hover {
-    background-color: #fffee2;
+    background-color: rgba(white, 1);
   }
 }
 
 /*===============================================
- About / Tech icons
+ About / Icons
  */
 
 #about-content {
   background-color: $about-bg-color;
+
+  .icons {
+    margin: 40px 0;
+  }
 
   img {
     @include border-radius(5px);
@@ -196,8 +271,23 @@ header {
     height: auto;
     vertical-align: middle;
     margin: 15px;
-    background-color: rgba(white, 0.5);
     padding: 15px;
+    background-color: rgba(white, 0.5);
+  }
+
+  .about-action {
+    //@include hover-fade(150ms);
+    @include button-dark($welcome-bg-color, darken($welcome-bg-color, 20%));
+  }
+
+  .about-action:hover {
+    color: lighten($welcome-bg-color, 20%);
+  }
+
+  .about-action:active {
+    @include vertical-box-shadow(0, darken($welcome-bg-color, 20%));
+    position: relative;
+    top: 3px;
   }
 }
 
@@ -219,26 +309,45 @@ form {
     font-size: $normal-font-size;
   }
 
+  .form-error {
+    line-height: 1em;
+    text-align: left;
+    margin: -8px 0 5px 0;
+    color: white;
+  }
+
   button {
-    @include border-radius($normal-radius);
-    padding: 10px 30px;
-    background-color: white;
-    font-family: $serif-fonts;
-    font-size: $normal-font-size;
-    font-weight: bold;
-    color: $contact-bg-color;
-    border: 0;
-    border-bottom: 2px solid $contact-bg-color-d;
+    @include button-white($contact-bg-color, darken($contact-bg-color, 20%));
   }
 
   button:hover {
-    color: rgba($contact-bg-color, 0.5);
+    color: lighten($contact-bg-color, 20%);
   }
 
   button:active {
-    border: 0;
-    border-top: 2px solid $contact-bg-color-d;
+    @include vertical-box-shadow(0, darken($contact-bg-color, 20%));
+    position: relative;
+    top: 3px;
   }
+
+  #form-submit-message {
+    text-align: center;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .success {
+    border: 2px solid white;
+    background-color: $success-green;
+  }
+
+  .error {
+    border: 2px solid white;
+    background-color: $error-red;
+  }
+
 }
 
 #form-value {
@@ -254,19 +363,127 @@ footer {
 
   p {
     text-align: center;
+
+    a {
+      padding: 0 10px;
+    }
   }
 
   a {
     text-decoration: none;
   }
+  
+  a:hover {
+    text-decoration: underline;
+  }
 
-  .icons-social img {
-    width: 50px;
-    height: 50px;
-    margin: 15px;
+  .icons-social {
+    font-size: 0;
+
+    img {
+      @include hover-fade(150ms);
+      width: 50px;
+      height: 50px;
+      margin: 15px;
+    }
+
+    img:hover {
+      opacity: 0.6;
+    }
   }
 
   .copyright {
     font-size: 14px;
   }
+}
+
+/*===============================================
+ Footer
+ */
+
+.disable-scroll {
+  overflow-y: hidden;
+}
+
+
+.modal {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: 2;
+  display: none;
+
+  div.button-close {
+    width: 100%;
+    height: 100px;
+    border: 0;
+    background: #f8f8f8;
+    font-size: 72px;
+    color: #aaa;
+    text-align: center;
+  }
+
+  .modal-links {
+    text-align: center;
+
+    a {
+      padding: 5px 10px;
+    }
+  }
+
+  img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+  }
+
+  button.button-close {
+    @include button-dark($contact-bg-color, lighten($contact-bg-color, 20%));
+  }
+
+  button.button-close:hover {
+    color: lighten($contact-bg-color, 20%);
+  }
+
+  button.button-close:active {
+    @include vertical-box-shadow(0, lighten($contact-bg-color, 20%));
+    position: relative;
+    top: 3px;
+  }
+}
+
+.modal-open {
+  display: block;
+}
+
+/*===============================================
+ Loading Spinner Animation
+ */
+
+.loading-spinner {
+  border: 3px solid rgba(0,0,0,0.2);
+  border-radius: 50%;
+  border-top: 3px solid white;
+  border-right: 3px solid white;
+  width: 18px;
+  height: 18px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+  margin: -3px 0 0 10px;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
