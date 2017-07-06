@@ -11,11 +11,7 @@ ol {
   margin: 0;
   padding: 0; }
 
-/* Header color palette */
-/* Welcome color palette */
-/* Portfolio color palette */
-/* About color palette */
-/* Contact color palette */
+/* Main content colors */
 /* Interface colors */
 /*===============================================
  Global Styling
@@ -354,9 +350,9 @@ footer {
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     border-radius: 5px;
-    -webkit-box-shadow: 0 3px 0 #7c211e;
-    -moz-box-shadow: 0 3px 0 #7c211e;
-    box-shadow: 0 3px 0 #7c211e;
+    -webkit-box-shadow: 0 3px 0 #e28884;
+    -moz-box-shadow: 0 3px 0 #e28884;
+    box-shadow: 0 3px 0 #e28884;
     padding: 10px 30px;
     color: white;
     font-family: "Roboto Slab", Georgia, serif;
@@ -368,9 +364,9 @@ footer {
   .modal button.button-close:hover {
     color: #e28884; }
   .modal button.button-close:active {
-    -webkit-box-shadow: 0 0 0 #7c211e;
-    -moz-box-shadow: 0 0 0 #7c211e;
-    box-shadow: 0 0 0 #7c211e;
+    -webkit-box-shadow: 0 0 0 #e28884;
+    -moz-box-shadow: 0 0 0 #e28884;
+    box-shadow: 0 0 0 #e28884;
     position: relative;
     top: 3px; }
 

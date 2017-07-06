@@ -102,8 +102,11 @@ function contactSubmit(event) {
   var inputMessage = $('#form-message');
   var inputValue = $('#form-value');
 
+  var message = $('#form-submit-message');
+
   // reset previous error messages
   clearErrors();
+  message.hide();
 
   // make sure each field contains something, and that our email is properly formatted
   if (inputName.val() === '') {
@@ -126,7 +129,7 @@ function contactSubmit(event) {
   if (email_ok) {
     disableSubmit();
 
-    var message = $('#form-submit-message');
+
 
     var ajaxData = {
       method: 'post',

@@ -8,30 +8,12 @@ $serif-fonts: 'Roboto Slab', Georgia, serif;
 $normal-font-size: 18px;
 $normal-radius: 5px;
 
-/* Header color palette */
+/* Main content colors */
 $header-bg-color: #25424e;
-$header-bg-color-d: darken( $header-bg-color, 20% );
-$header-bg-color-l: lighten( $header-bg-color, 20% );
-
-/* Welcome color palette */
 $welcome-bg-color: #3cce74;
-$welcome-bg-color-d: darken( $welcome-bg-color, 20% );
-$welcome-bg-color-l: lighten( $welcome-bg-color, 20% );
-
-/* Portfolio color palette */
 $portfolio-bg-color: #ce8f39;
-$portfolio-bg-color-d: darken( $portfolio-bg-color, 20% );
-$portfolio-bg-color-l: lighten( $portfolio-bg-color, 20% );
-
-/* About color palette */
 $about-bg-color: #e1e0c7;
-$about-bg-color-d: darken( $about-bg-color, 20% );
-$about-bg-color-l: lighten( $about-bg-color, 20% );
-
-/* Contact color palette */
 $contact-bg-color: #ce3832;
-$contact-bg-color-d: darken( $contact-bg-color, 20% );
-$contact-bg-color-l: lighten( $contact-bg-color, 20% );
 
 /* Interface colors */
 $success-green: #7dac36;
@@ -172,7 +154,7 @@ header {
 
   #nav-toggle {
     @include center-vertical-absolute;
-    @include button-white($header-bg-color, $header-bg-color-d);
+    @include button-white($header-bg-color, darken($header-bg-color, 20%));
     display: none;
     position: absolute;
     right: 5%;
@@ -295,15 +277,15 @@ header {
 
   .about-action {
     //@include hover-fade(150ms);
-    @include button-dark($welcome-bg-color, $welcome-bg-color-d);
+    @include button-dark($welcome-bg-color, darken($welcome-bg-color, 20%));
   }
 
   .about-action:hover {
-    color: $welcome-bg-color-l;
+    color: lighten($welcome-bg-color, 20%);
   }
 
   .about-action:active {
-    @include vertical-box-shadow(0, $welcome-bg-color-d);
+    @include vertical-box-shadow(0, darken($welcome-bg-color, 20%));
     position: relative;
     top: 3px;
   }
@@ -335,15 +317,15 @@ form {
   }
 
   button {
-    @include button-white($contact-bg-color, $contact-bg-color-d);
+    @include button-white($contact-bg-color, darken($contact-bg-color, 20%));
   }
 
   button:hover {
-    color: $contact-bg-color-l;
+    color: lighten($contact-bg-color, 20%);
   }
 
   button:active {
-    @include vertical-box-shadow(0, $contact-bg-color-d);
+    @include vertical-box-shadow(0, darken($contact-bg-color, 20%));
     position: relative;
     top: 3px;
   }
@@ -460,15 +442,15 @@ footer {
   }
 
   button.button-close {
-    @include button-dark($contact-bg-color, $contact-bg-color-d);
+    @include button-dark($contact-bg-color, lighten($contact-bg-color, 20%));
   }
 
   button.button-close:hover {
-    color: $contact-bg-color-l;
+    color: lighten($contact-bg-color, 20%);
   }
 
   button.button-close:active {
-    @include vertical-box-shadow(0, $contact-bg-color-d);
+    @include vertical-box-shadow(0, lighten($contact-bg-color, 20%));
     position: relative;
     top: 3px;
   }
