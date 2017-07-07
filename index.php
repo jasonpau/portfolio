@@ -39,28 +39,41 @@
         <h2>Portfolio</h2>
         <hr />
         <section class="application-box" id="app-1">
-          <img src="" alt="" />
-          <h3>Application 1</h3>
+          <h3>League of Boatwrights</h3>
+          <div class="modal-links">
+            <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
+          </div>
+          <img src="images/image-default-800x600.png" alt="" title="" />
         </section>
         <section class="application-box" id="app-2">
-          <img src="" alt="" />
-          <h3>Application 2</h3>
+          <h3>Hole in the Wall Restaurant Finder</h3>
+          <div class="modal-links">
+            <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
+          </div>
         </section>
         <section class="application-box" id="app-3">
-          <img src="" alt="" />
-          <h3>Application 3</h3>
+          <h3>Student Grade Table</h3>
+          <div class="modal-links">
+            <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
+          </div>
         </section>
         <section class="application-box" id="app-4">
-          <img src="" alt="" />
-          <h3>Application 4</h3>
+          <h3>Memory Match</h3>
+          <div class="modal-links">
+            <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
+          </div>
         </section>
         <section class="application-box" id="app-5">
-          <img src="" alt="" />
-          <h3>Application 5</h3>
+          <h3>Connect X</h3>
+          <div class="modal-links">
+            <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
+          </div>
         </section>
         <section class="application-box" id="app-6">
-          <img src="" alt="" />
-          <h3>Application 6</h3>
+          <h3>Calculator</h3>
+          <div class="modal-links">
+            <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
+          </div>
         </section>
       </section>
     </div>
@@ -155,7 +168,7 @@
   <div class="modal" id="modal-1">
     <div class="button-close">&times;</div>
     <section class="content-box">
-      <img src="images/npm-original-wordmark.svg" alt="" title="" />
+      <img src="images/image-default-800x600.png" alt="" title="" />
       <h2>Application 1</h2>
       <p class="modal-links">
         <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
@@ -169,7 +182,7 @@
   <div class="modal" id="modal-2">
     <div class="button-close">&times;</div>
     <section class="content-box">
-      <img src="images/npm-original-wordmark.svg" alt="" title="" />
+      <img src="images/image-default-800x600.png" alt="" title="" />
       <h2>Application 2</h2>
       <p class="modal-links">
         <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
@@ -183,7 +196,7 @@
   <div class="modal" id="modal-3">
     <div class="button-close">&times;</div>
     <section class="content-box">
-      <img src="images/npm-original-wordmark.svg" alt="" title="" />
+      <img src="images/image-default-800x600.png" alt="" title="" />
       <h2>Application 3</h2>
       <p class="modal-links">
         <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
@@ -197,7 +210,7 @@
   <div class="modal" id="modal-4">
     <div class="button-close">&times;</div>
     <section class="content-box">
-      <img src="images/npm-original-wordmark.svg" alt="" title="" />
+      <img src="images/image-default-800x600.png" alt="" title="" />
       <h2>Application 4</h2>
       <p class="modal-links">
         <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
@@ -211,7 +224,7 @@
   <div class="modal" id="modal-5">
     <div class="button-close">&times;</div>
     <section class="content-box">
-      <img src="images/npm-original-wordmark.svg" alt="" title="" />
+      <img src="images/image-default-800x600.png" alt="" title="" />
       <h2>Application 5</h2>
       <p class="modal-links">
         <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
@@ -225,7 +238,7 @@
   <div class="modal" id="modal-6">
     <div class="button-close">&times;</div>
     <section class="content-box">
-      <img src="images/npm-original-wordmark.svg" alt="" title="" />
+      <img src="images/image-default-800x600.png" alt="" title="" />
       <h2>Application 6</h2>
       <p class="modal-links">
         <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
