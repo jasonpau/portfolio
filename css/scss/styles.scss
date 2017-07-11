@@ -11,8 +11,8 @@ $normal-radius: 5px;
 /* Main content colors */
 $header-bg-color: #25424e;
 $welcome-bg-color: #3cce74;
-$portfolio-bg-color: #ce8f39;
-$about-bg-color: #e1e0c7;
+$portfolio-bg-color: #e1e0c7;
+$about-bg-color: #d68d27;
 $contact-bg-color: #ce3832;
 
 /* Interface colors */
@@ -246,8 +246,9 @@ header {
     height: 300px;
     margin: 15px;
     padding: 15px;
-    background-color: rgba(white, 0.7);
     vertical-align: top;
+    background: white url(http://localhost/Documents/Web/portfolio/portfolio/images/image-default-800x600.png) no-repeat center;
+    background-size: cover;
 
     h3 {
       margin: 0.25em 0;
@@ -255,11 +256,6 @@ header {
 
     .modal-links {
       display: none;
-    }
-
-    img {
-      width:100%;
-      height: auto;
     }
   }
 
@@ -286,7 +282,7 @@ header {
     vertical-align: middle;
     margin: 15px;
     padding: 15px;
-    background-color: rgba(white, 0.5);
+    background-color: white;
   }
 
   .about-action {

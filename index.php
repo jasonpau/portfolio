@@ -11,9 +11,10 @@
 <body>
   <header>
     <div id="header-content">
-      <div id="logo">
-        Jason Pau Development
-      </div>
+      <img src="images/jp-logo.svg" id="logo" alt="" title="" style="max-height: 80px; max-width: 80px; display: block;" />
+<!--      <div id="logo">-->
+<!--        Jason Pau Development-->
+<!--      </div>-->
       <button type="button" id="nav-toggle">Menu</button>
       <nav>
         <ul>
@@ -43,7 +44,6 @@
           <div class="modal-links">
             <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
           </div>
-          <img src="images/image-default-800x600.png" alt="" title="" />
         </section>
         <section class="application-box" id="app-2">
           <h3>Hole in the Wall Restaurant Finder</h3>
@@ -84,7 +84,7 @@
         <hr />
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eius eos ex magnam minima praesentium quae quas quisquam reprehenderit sunt! Atque cupiditate, delectus deserunt eligendi facere fugit id illum iste laboriosam nemo officia quaerat quasi quod recusandae repellendus, sequi sunt ut! Aperiam distinctio nihil odio sapiente tenetur? Ab adipisci, et harum incidunt numquam perspiciatis quae quam similique. Aliquam amet at delectus dignissimos dolores excepturi expedita in ipsa, iusto nam natus nisi nulla numquam provident quam, quas quasi quidem reiciendis rem saepe sint totam voluptas. Asperiores et, explicabo fugit harum modi nam nihil odio odit, optio quos, sint totam velit voluptatibus.</p>
         <section class="icons">
-          <h3>Technologies</h3>
+          <h3>Some of the technologies I use:</h3>
           <hr />
           <img src="images/javascript-original.svg" alt="" title="" />
           <img src="images/jquery-original-wordmark.svg" alt="" title="" />
@@ -104,7 +104,6 @@
           <img src="images/git-original-wordmark.svg" alt="Git" title="Git" />
           <img src="images/github-original-wordmark.svg" alt="GitHub" title="GitHub" />
           <img src="images/npm-original-wordmark.svg" alt="Node Packet Manager" title="Node Packet Manager" />
-          <img src="images/phpstorm-original-wordmark.svg" alt="PhpStorm" title="PhpStorm" />
           <img src="images/slack-original-wordmark.svg" alt="Slack" title="Slack" />
           <img src="images/illustrator-plain.svg" alt="Adobe Illustrator" title="Adobe Illustrator" />
           <img src="images/photoshop-plain.svg" alt="Adobe Photoshop" title="Adobe Photoshop" />
@@ -139,10 +138,13 @@
     <div class="content-box">
       <div class="icons-social">
         <a href="https://linkedin.com/in/jasonpau" target="_blank">
-          <img src="images/linkedin-plain.svg" alt="LinkedIn" title="LinkedIn" />
+          <img src="images/linkedin-plain.svg" alt="LinkedIn" title="Connect with me on LinkedIn" />
+        </a>
+        <a href="https://twitter.com/thejasonpau" target="_blank">
+          <img src="images/twitter-plain.svg" alt="Twitter" title="See what I'm up to on Twitter" />
         </a>
         <a href="https://github.com/jasonpau" target="_blank">
-          <img src="images/github-original.svg" alt="GitHub" title="GitHub" />
+          <img src="images/github-original.svg" alt="GitHub" title="Check out my code on GitHub" />
         </a>
       </div>
       <p>
