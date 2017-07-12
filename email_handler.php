@@ -4,7 +4,6 @@ $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 $subject = filter_var($_POST['subject'], FILTER_SANITIZE_STRING);
 $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
 $value = filter_var($_POST['value'], FILTER_SANITIZE_STRING);
-//$from = 'From: $email';
 $to = 'dev@jasonpau.com';
 $headers = "From: $email";
 
@@ -19,23 +18,23 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 
   // if our honeypot somehow contains data...
   if ($value) {
-    $output['message'] = 'Your email has been sent into the void!';
-    echo(json_encode($output));
+    $output['message'] = 'Your email has been sent!';
+    print_r(json_encode($output));
     exit();
   }
 
   if ($name != '' && $email != '') {
-    if ( preg_match( "/[\r\n]/", $name ) || preg_match( "/[\r\n]/", $email ) ) {
+    if (preg_match( "/[\r\n]/", $name ) || preg_match( "/[\r\n]/", $email ) || preg_match( "/[\r\n]/", $message )) {
       $output['message'] = 'There were errors with either the name or email fields.';
     }
 
-    if (mail ($to, $subject, $body, $headers)) {
+    if (mail($to, $subject, $body, $headers)) {
       $output['success'] = true;
       $output['message'] = 'Your email has been sent!';
     }
   }
 }
 
-echo(json_encode($output));
+print_r(json_encode($output));
 
 ?>

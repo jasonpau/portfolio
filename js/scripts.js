@@ -129,17 +129,15 @@ function contactSubmit(event) {
   if (email_ok) {
     disableSubmit();
 
-
-
     var ajaxData = {
       method: 'post',
       url: 'email_handler.php',
       dataType: 'json',
       data: {
-        name: inputName.val(),
-        email: inputEmail.val(),
-        subject: inputSubject.val(),
-        message: inputMessage.val(),
+        name: inputName.val().trim(),
+        email: inputEmail.val().trim(),
+        subject: inputSubject.val().trim(),
+        message: inputMessage.val().trim(),
         value: inputValue.val()
       },
       success: function(response) {

@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Web Developer, Designer, and Professional Googler. Located in Orange County, CA."/>
+
   <title>Jason Pau - Web Developer</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" />
@@ -104,10 +106,9 @@
           <img src="images/git-original-wordmark.svg" alt="Git" title="Git" />
           <img src="images/github-original-wordmark.svg" alt="GitHub" title="GitHub" />
           <img src="images/npm-original-wordmark.svg" alt="Node Packet Manager" title="Node Packet Manager" />
-          <img src="images/slack-original-wordmark.svg" alt="Slack" title="Slack" />
+          <img src="images/meistertask.svg" alt="Meistertask" title="Meistertask" />
           <img src="images/illustrator-plain.svg" alt="Adobe Illustrator" title="Adobe Illustrator" />
           <img src="images/photoshop-plain.svg" alt="Adobe Photoshop" title="Adobe Photoshop" />
-          <!-- todo add meistertask logo? -->
         </section>
         <a href="#" class="about-action" target="_blank">Download Resume</a>
       </section>
@@ -127,7 +128,7 @@
           <input type="text" name="value" id="form-value" placeholder="Please leave this field empty" />
           <textarea name="message" id="form-message" rows="7" placeholder="Message"></textarea>
           <div class="form-error" id="form-message-error"></div>
-          <button type="submit" id="form-submit">Send<div id="button-indicator" class=""></div></button>
+          <button type="submit" id="form-submit">Send<span id="button-indicator" class=""></span></button>
           <p id="form-submit-message"></p>
         </form>
       </section>
