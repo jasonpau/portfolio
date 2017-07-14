@@ -98,7 +98,6 @@ function contactSubmit(event) {
 
   if (email_ok) {
     disableSubmit();
-
     var ajaxData = {
       method: 'post',
       url: 'email_handler.php',
@@ -136,6 +135,7 @@ function contactSubmit(event) {
   }
 }
 
+// removes all form error messages
 function clearErrors() {
   $('#form-name-error').text('');
   $('#form-email-error').text('');
