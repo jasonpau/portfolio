@@ -9,11 +9,13 @@ $normal-font-size: 18px;
 $normal-radius: 5px;
 
 /* Main content colors */
-$header-bg-color: #25424e;
-$welcome-bg-color: #3cce74;
-$portfolio-bg-color: #e1e0c7;
-$about-bg-color: #d68d27;
-$contact-bg-color: #ce3832;
+$header-bg-color: #283132;
+$welcome-bg-color: #36B1BF;
+$portfolio-bg-color: #E9F1DF;
+$about-bg-color: #F5A503;
+$contact-bg-color: #3cce74;
+$footer-bg-color: $header-bg-color;
+$footer-text-color: #b4b4b4;
 
 /* Interface colors */
 $success-green: #7dac36;
@@ -242,13 +244,18 @@ header {
     @include hover-fade(150ms);
     @include border-radius($normal-radius);
     display: inline-block;
-    width: 300px;
-    height: 300px;
-    margin: 15px;
+    width: 45%;
+    height: 350px;
+    margin: 2%;
     padding: 15px;
     vertical-align: top;
     background: white url(http://localhost/Documents/Web/portfolio/portfolio/images/image-default-800x600.png) no-repeat center;
     background-size: cover;
+
+    @media (max-width: 768px) {
+      width: 96%;
+      height: 300px;
+    }
 
     h3 {
       margin: 0.25em 0;
@@ -369,13 +376,16 @@ form {
  */
 
 footer {
+  background-color: $footer-bg-color;
   text-align: center;
+  color: $footer-text-color;
 
   p {
     text-align: center;
 
     a {
       padding: 0 10px;
+      color: $footer-text-color;
     }
   }
 
@@ -395,10 +405,11 @@ footer {
       width: 50px;
       height: 50px;
       margin: 15px;
+      opacity: 0.6;
     }
 
     img:hover {
-      opacity: 0.6;
+      opacity: 1;
     }
   }
 
@@ -408,7 +419,7 @@ footer {
 }
 
 /*===============================================
- Footer
+ Modal windows
  */
 
 .disable-scroll {
