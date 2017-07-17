@@ -64,6 +64,16 @@ $error-red: #ce3832;
   transform: translateY(-50%);
 }
 
+@mixin center-horizontal-absolute {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
 @mixin button-white($color, $color-d) {
   @include border-radius($normal-radius);
   @include vertical-box-shadow(3px, $color-d);
