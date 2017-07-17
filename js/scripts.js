@@ -23,6 +23,7 @@ function createEventListeners() {
   // setting up the click event listeners and handlers for each of the main menu links
   $('header').on('click', '.nav-link', function() {
     // hide the menu after a click, but only when on mobile
+    event.preventDefault(); // disable actual a href link so screen doesn't flicker
     if ($(window).width() < 768) {
       $('#main-nav').hide();
     }
