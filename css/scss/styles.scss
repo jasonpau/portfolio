@@ -337,6 +337,11 @@ header {
     padding: 15px;
     background-color: white;
 
+    @media (max-width: 420px) {
+      width: 110px;
+      margin: 10px;
+      padding: 12px;
+    }
   }
 
   .about-action {
@@ -432,6 +437,10 @@ footer {
     a {
       padding: 0 10px;
       color: $footer-text-color;
+
+      @media (max-width: 420px) {
+        font-size: 14px;
+      }
     }
   }
 

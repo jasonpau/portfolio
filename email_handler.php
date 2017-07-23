@@ -7,7 +7,7 @@ $value = filter_var($_POST['value'], FILTER_SANITIZE_STRING);
 $to = 'dev@jasonpau.com';
 $headers = "From: $email";
 
-$body = "From: $name\nE-Mail:$email\nSubject:$subject\n\nMessage:\n$message";
+$body = "From: $name\nE-Mail: $email\nSubject: $subject\n\nMessage: \n$message";
 
 $output = array(
   'success' => false,
