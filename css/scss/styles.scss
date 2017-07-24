@@ -189,9 +189,14 @@ header {
     @include center-vertical-absolute;
     right: 5%;
 
+    @media (max-width: 768px) {
+      display: none;
+    }
+
     li {
       list-style: none;
       display: inline-block;
+
       @media (max-width: 768px) {
         display: block;
       }
@@ -215,6 +220,10 @@ header {
     transform: none;
     left: 0;
     right: 0;
+
+    @media (min-width: 769px) {
+      display: none;
+    }
 
     li {
       display: block;
