@@ -17,11 +17,18 @@
       <a href="#home" class="nav-link">
         <img src="images/jp-logo.svg" id="logo" alt="JP" title="Jason Pau" />
       </a>
-<!--      <div id="logo">-->
-<!--        Jason Pau Development-->
-<!--      </div>-->
+      <!--<div id="logo">-->
+        <!--Jason Pau Development-->
+      <!--</div>-->
       <button type="button" id="nav-toggle">Menu</button>
       <nav id="main-nav">
+        <ul>
+          <li><a href="#portfolio-content" id="link-portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#about-content" id="link-about" class="nav-link">About</a></li>
+          <li><a href="#contact-content" id="link-contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <nav id="main-nav-mobile">
         <ul>
           <li><a href="#portfolio-content" id="link-portfolio" class="nav-link">Portfolio</a></li>
           <li><a href="#about-content" id="link-about" class="nav-link">About</a></li>
@@ -178,7 +185,7 @@
           var b = 'jasonp';
           var c = 'au.com';
           var d = 'lto:';
-          document.write('<a href="mai' + d + a + b + c + '?subject=" target="_blank">' + a + b + c + '</a>');
+          document.write('<a href="mai' + d + a + b + c + '?Subject=Hey%20Jason%21%20&Body=I%20was%20looking%20at%20your%20web%20development%20portfolio%20just%20now%20and%20I%20liked%20what%20I%20saw.%20I%20think%20it%20would%20be%20beneficial%20for%20both%20of%20us%20if%20we%20got%20in%20touch.%0A%0AHere%27s%20my%20name%20and%20contact%20info%3A" target="_blank">' + a + b + c + '</a>');
         </script> |
         <script type="text/javascript">
           var a = '949';

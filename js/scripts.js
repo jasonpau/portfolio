@@ -24,7 +24,7 @@ function createEventListeners() {
   $('header').on('click', '.nav-link', function() {
     // hide the menu after a click, but only when on mobile
     event.preventDefault(); // disable actual a href link so screen doesn't flicker
-    if ($(window).width() < 768) {
+    if (window.innerWidth < 768) {
       $('#main-nav').hide();
     }
     // chained a stop method call to end all currently running animations on the html/body before starting a new one
@@ -35,13 +35,16 @@ function createEventListeners() {
 
   // show/hide the menu when clicking the menu button
   $('#nav-toggle').on('click', function() {
-    $('#main-nav').toggle();
+    $('#main-nav-mobile').toggle();
   });
 
   // make sure the menu nav always shows on desktop
   $(window).resize(function() {
-    if ($(window).width() > 768) {
+    if (window.innerWidth > 768) {
       $('#main-nav').show();
+      $('#main-nav-mobile').hide();
+    } else {
+      $('#main-nav').hide();
     }
   });
 
@@ -111,7 +114,6 @@ function contactSubmit(event) {
         value: inputValue.val()
       },
       success: function(response) {
-        console.log('success response:',response);
         message.removeClass('error')
           .addClass('success')
           .show()
