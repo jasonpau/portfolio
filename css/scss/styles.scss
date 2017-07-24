@@ -124,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1em;
 }
 
-h1 { font-size: 56px; }
+h1 { font-size: 48px; }
 
 h2 { font-size: 36px; }
 
@@ -143,6 +143,10 @@ p {
   overflow-wrap: break-word;
 }
 
+span.prevent-line-break {
+  display: inline-block;
+}
+
 /*===============================================
  Header
  */
@@ -155,6 +159,7 @@ header {
   height: 80px;
   background-color: $header-bg-color;
   z-index: 3;
+  min-width: 300px;
 
   #header-content {
     @include normal-content-centered();
@@ -165,13 +170,16 @@ header {
   #logo {
     @include center-vertical-absolute;
     left: 5%;
+    max-height: 80px;
+    max-width: 80px;
+    display: block;
+  }
+
+  #logo-text {
     font-size: 22px;
     color: white;
     font-weight: bold;
     cursor: pointer;
-    max-height: 80px;
-    max-width: 80px;
-    display: block;
   }
 
   #nav-toggle {
@@ -261,6 +269,12 @@ header {
 
 #welcome-content {
   background-color: $welcome-bg-color;
+
+  .splash-image {
+    width: 100%;
+    max-width: 277px;
+    height: auto;
+  }
 
   p {
     text-align: center;
