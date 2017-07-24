@@ -4,28 +4,12 @@ $(document).ready(function() {
 
 function createEventListeners() {
 
-  // links and destinations for the smooth scroll animations
-  var links = [
-    { linkID: '#logo',
-      locationID: 'html'
-    },
-    { linkID: '#link-portfolio',
-      locationID: '#portfolio-content'
-    },
-    { linkID: '#link-about',
-      locationID: '#about-content'
-    },
-    { linkID: '#link-contact',
-      locationID: '#contact-content'
-    }
-  ];
-
   // setting up the click event listeners and handlers for each of the main menu links
   $('header').on('click', '.nav-link', function() {
     // hide the menu after a click, but only when on mobile
     event.preventDefault(); // disable actual a href link so screen doesn't flicker
     if (window.innerWidth < 768) {
-      $('#main-nav').hide();
+      $('#main-nav-mobile').hide();
     }
     // chained a stop method call to end all currently running animations on the html/body before starting a new one
     $('html, body').stop().animate({
@@ -147,12 +131,14 @@ function clearErrors() {
   $('#form-submit-message').text('');
 }
 
+// disabled the submit button (while the user waits for the ajax call to resolve)
 function disableSubmit() {
   $('#button-indicator').addClass('loading-spinner');
   $('#form-contact').attr('disabled', 'disabled');
   $('#form-submit-message').hide();
 }
 
+// reenable the submit button
 function reenableSubmit() {
   $('#button-indicator').removeClass('loading-spinner');
   $('#form-contact').removeAttr('disabled');

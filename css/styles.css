@@ -120,6 +120,9 @@ header {
     -o-transform: translateY(-50%);
     transform: translateY(-50%);
     right: 5%; }
+    @media (max-width: 768px) {
+      header nav {
+        display: none; } }
     header nav li {
       list-style: none;
       display: inline-block; }
@@ -145,6 +148,9 @@ header {
     transform: none;
     left: 0;
     right: 0; }
+    @media (min-width: 769px) {
+      header #main-nav-mobile {
+        display: none; } }
     header #main-nav-mobile li {
       display: block; }
     header #main-nav-mobile a {
