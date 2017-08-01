@@ -51,7 +51,7 @@ $error-red: #ce3832;
 
 @mixin x-small-content-centered {
   @include content-centered-base;
-  max-width: 700px;
+  max-width: 720px;
 }
 
 @mixin center-vertical-absolute {
@@ -523,6 +523,11 @@ footer {
   overflow-y: auto;
   z-index: 5;
   display: none;
+
+  .content-box {
+    @include x-small-content-centered();
+    padding-top: 20px;
+  }
 
   div.button-close {
     width: 100%;
