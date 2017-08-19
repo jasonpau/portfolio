@@ -1,5 +1,5 @@
 /*===============================================
- SASS elements
+ SASS elements/variables
  */
 
 @import 'reset';
@@ -78,7 +78,7 @@ $error-red: #ce3832;
   @include border-radius($normal-radius);
   @include vertical-box-shadow(3px, $color-d);
   padding: 10px 30px;
-  color: $color;
+  color: $color-d;
   font-family: $serif-fonts;
   font-size: $normal-font-size;
   font-weight: bold;
@@ -113,7 +113,6 @@ $error-red: #ce3832;
  */
 
 body {
-  margin-top: 80px;
   font-family: $serif-fonts;
   font-size: $normal-font-size;
   min-width: 300px;
@@ -136,6 +135,16 @@ hr {
   width: 100%;
   max-width: 300px;
   margin: 20px auto;
+}
+
+/* "lazy loading" CSS that works in tandem with the little JS snippet from David Walsh */
+img {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+img[data-src] {
+  opacity: 0;
 }
 
 p {
@@ -269,6 +278,7 @@ header {
 
 #welcome-content {
   background-color: $welcome-bg-color;
+  padding-top: 80px;
 
   .splash-image {
     width: 100%;
@@ -292,6 +302,10 @@ header {
     text-align: center;
   }
 
+  .application-link {
+    cursor: pointer;
+  }
+
   .application-box {
     @include hover-fade(150ms);
     @include border-radius($normal-radius);
@@ -301,7 +315,6 @@ header {
     margin: 2%;
     padding: 15px;
     vertical-align: top;
-    cursor: pointer;
     background-color: black;
     position: relative;
     overflow: hidden;
@@ -334,7 +347,7 @@ header {
       top: 0;
       height: 100%;
       width: auto;
-      opacity: 0.4;
+      opacity: 0.35;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
     }
@@ -421,7 +434,7 @@ form {
   }
 
   button:hover {
-    color: lighten($contact-bg-color, 20%);
+    color: $contact-bg-color;
   }
 
   button:active {

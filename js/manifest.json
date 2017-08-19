@@ -1,0 +1,24 @@
+{
+  "short_name": "Jason Pau",
+  "name": "Jason Pau - Web Developer",
+  "background_color": "#36B1BF",
+  "theme_color": "#283132",
+  "icons": [
+    {
+      "src": "../images/jp-icon-192.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "../images/jp-icon-192.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "../images/jp-icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "index.html?launcher=true"
+}

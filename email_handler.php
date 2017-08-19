@@ -1,4 +1,5 @@
 <?php
+
 $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
 $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 $subject = filter_var($_POST['subject'], FILTER_SANITIZE_STRING);
@@ -16,7 +17,7 @@ $output = array(
 
 if($_SERVER["REQUEST_METHOD"] === "POST") {
 
-  // if our honeypot somehow contains data...
+  // if our honeypot somehow contains data, print a response, but don't actually send the email
   if ($value) {
     $output['message'] = 'Your email has been sent!';
     print_r(json_encode($output));
@@ -27,7 +28,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     if (preg_match( "/[\r\n]/", $name ) || preg_match( "/[\r\n]/", $email ) || preg_match( "/[\r\n]/", $message )) {
       $output['message'] = 'There were errors with either the name or email fields.';
     }
-
     if (mail($to, $subject, $body, $headers)) {
       $output['success'] = true;
       $output['message'] = 'Your email has been sent!';
