@@ -270,6 +270,10 @@ header {
 
 #contact-content {
   background-color: $contact-bg-color;
+  
+  p {
+    text-align: center;
+  }
 }
 
 /*===============================================
@@ -391,6 +395,8 @@ header {
 
   .about-action {
     @include button-dark($welcome-bg-color, darken($welcome-bg-color, 20%));
+    display: inline-block;
+    margin: 20px 0;
   }
 
   .about-action:hover {
