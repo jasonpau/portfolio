@@ -32,10 +32,10 @@ function createEventListeners() {
     }
   });
 
-  // setting up the click event listeners and handlers for each of the above links
-  $('#application-container').on('click', '.application-box', function() {
+  // setting up the click event listeners and handlers for the app modal windows
+  $('#application-container').on('click', '.application-link', function() {
     $('body').toggleClass('disable-scroll');
-    $('.modal:nth-child('+ ($('.application-box').index(this) + 1) + ')').show();
+    $('.modal:nth-child('+ ($('.application-link').index(this) + 1) + ')').show();
   });
 
   // add close buttons to all modal exit buttons
@@ -117,17 +117,13 @@ function contactSubmit(event) {
         reenableSubmit();
       }
     };
-
     $.ajax(ajaxData);
   }
 }
 
 // removes all form error messages
 function clearErrors() {
-  $('#form-name-error').text('');
-  $('#form-email-error').text('');
-  $('#form-subject-error').text('');
-  $('#form-message-error').text('');
+  $('.form-error').text('');
   $('#form-submit-message').text('');
 }
 
@@ -143,3 +139,11 @@ function reenableSubmit() {
   $('#button-indicator').removeClass('loading-spinner');
   $('#form-contact').removeAttr('disabled');
 }
+
+// simple deferred/lazy image loading using David Walsh's method
+[].forEach.call(document.querySelectorAll('img[data-src]'), function(img) {
+  img.setAttribute('src', img.getAttribute('data-src'));
+  img.onload = function() {
+    img.removeAttribute('data-src');
+  };
+});

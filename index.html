@@ -1,279 +1,322 @@
 <!DOCTYPE html>
 <html lang="en" id="home">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="description" content="Web Developer, Designer, and Professional Googler. Located in Orange County, CA."/>
   <meta name="theme-color" content="#283132">
-  <title>Jason Pau - Web Developer</title>
+  <title>Jason Pau - Web Developer, Designer, Professional Googler</title>
+  <link rel="manifest" href="js/manifest.json">
   <link rel="icon" sizes="192x192" href="images/jp-icon-192.png">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css"/>
+  <style>
+    #loading-screen {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background-color: #36B1BF;
+      z-index: 50;
+    }
+
+    .spinner-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+    }
+
+    .spinner {
+      border: 5px solid rgba(0,0,0,0.15);
+      border-top: 5px solid rgba(0,0,0,0.6);
+      border-right: 5px solid rgba(0,0,0,0.6);
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      border-radius: 50px;
+      width: 100px;
+      height: 100px;
+      -webkit-animation: spin 1s linear infinite;
+      animation: spin 1s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      document.getElementById('loading-screen').style.display = 'none';
+    });
+
+    setTimeout(function(){
+      document.getElementById('loading-screen').style.display = 'none';
+    }, 3000);
+  </script>
 </head>
 <body>
-  <header>
-    <div id="header-content">
-      <a href="#home" class="nav-link">
-        <img src="images/jp-logo.svg" id="logo" alt="JP" title="Jason Pau" />
-      </a>
-      <div id="logo">
-        Jason Pau Development
-      </div>
-      <button type="button" id="nav-toggle">Menu</button>
-      <nav id="main-nav">
-        <ul>
-          <li><a href="#portfolio-content" id="link-portfolio" class="nav-link">Portfolio</a></li>
-          <li><a href="#about-content" id="link-about" class="nav-link">About</a></li>
-          <li><a href="#contact-content" id="link-contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-      <nav id="main-nav-mobile">
-        <ul>
-          <li><a href="#portfolio-content" id="link-portfolio" class="nav-link">Portfolio</a></li>
-          <li><a href="#about-content" id="link-about" class="nav-link">About</a></li>
-          <li><a href="#contact-content" id="link-contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<div id="loading-screen">
+  <div class="spinner-wrapper">
+    <div class="spinner"></div>
+  </div>
+</div>
+<header>
+  <div id="header-content">
+    <a href="#home" class="nav-link">
+      <img data-src="images/jp-logo.svg" id="logo" alt="JP" title="Jason Pau"/>
+    </a>
+    <button type="button" id="nav-toggle">Menu</button>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="#portfolio-content" class="nav-link">Portfolio</a></li>
+        <li><a href="#about-content" class="nav-link">About</a></li>
+        <li><a href="#contact-content" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <nav id="main-nav-mobile">
+      <ul>
+        <li><a href="#portfolio-content" class="nav-link">Portfolio</a></li>
+        <li><a href="#about-content" class="nav-link">About</a></li>
+        <li><a href="#contact-content" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <main>
-    <div id="welcome-content">
-      <section class="content-box">
-        <img src="images/profile-picture.png" alt="Friendly guy with a great smile and a ton of relevant skills" title="" />
-        <h1>Hi, I'm Jason!</h1>
-        <hr />
-        <p>Web Developer - Designer - Professional Googler</p>
-      </section>
-    </div>
+<main>
+  <div id="welcome-content">
+    <section class="content-box">
+      <img data-src="images/profile-picture.png" alt="Friendly guy with a great smile and a ton of relevant skills"
+           title="Jason Pau" class="splash-image" height="277" width="277"/>
+      <h1>Hi, I'm Jason&nbsp;Pau!</h1>
+      <hr/>
+      <p>Web&nbsp;Developer - Designer - Professional&nbsp;Googler</p>
+    </section>
+  </div>
 
-    <div id="portfolio-content">
-      <section class="content-box">
-        <h2>Portfolio</h2>
-        <hr />
-        <div id="application-container">
-          <section class="application-box" id="app-1">
-            <h3>Hole in the Wall Restaurant&nbsp;Finder</h3>
-            <div class="modal-links">
-              <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
-            </div>
-            <img src="images/hole-in-the-wall-restaurant-640.jpg" alt="" title="" />
-          </section>
-          <section class="application-box" id="app-2">
-            <h3>Student Grade Table</h3>
-            <div class="modal-links">
-              <a href="https://github.com/jasonpau/student_grade_table_php" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
-            </div>
-            <img src="images/student-grade-table-640.jpg" alt="" title="" />
-          </section>
-          <section class="application-box" id="app-3">
-            <h3>League of Boatwrights</h3>
-            <div class="modal-links">
-              <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
-            </div>
-            <img src="images/league-of-boatwrights-640.jpg" alt="" title="" />
-          </section>
-          <section class="application-box" id="app-4">
-            <h3>Connect X</h3>
-            <div class="modal-links">
-              <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
-            </div>
-            <img src="images/connect-x-640.jpg" alt="" title="" />
-          </section>
-        </div>
-      </section>
-    </div>
-
-    <div id="about-content">
-      <section class="content-box">
-        <h2>About Me</h2>
-        <hr />
-        <p>Howdy! I'm a creative web developer based in Orange County, CA, with a long history of working on both the development and design aspects of websites.
-
-          Points to emphasize:
-          -I have a lot of web experience in general
-            -manual website development/design with HTML/CSS
-            -working within CMSs; wordpress, drupal, sitefinity, Joomla
-            -website maintenance/hosting/security/speed/seo
-          -I love doing it; I'm passionate about coding
-
-          -I enjoy collaboration on projects and being an integral part of a team,
-            -but I also have the ability to get things done independently
-
-          -my experience at a marketing agency helps me to create with end-users in mind
-            -making sure every touchpoint reinforces the company brand and adds value for the customer
-
-          -I've been involved in the interface design of a lot of projects, both websites and mobile applications
-
-          -I have a strong design background and I like/love it too (might not want to say it's TOO much of a love...otherwise I'm pigeonholed into a design role only, or it might come across as not liking coding)
-
-          -developed a bunch of really awesome applications using a range of technologies; working with APIs,
-
-
-          I really enjoy learning new things and can easily spend hours going down rabbit trails on Wikipedia and Stack Overflow.
-
-          Below are just some of the technologies and tools I'm familiar with.
-        </p>
-        <section class="icons">
-          <h3>Some of the technologies I use:</h3>
-          <hr />
-          <img src="images/javascript-original.svg" alt="JavaScript" title="JavaScript" />
-          <img src="images/jquery-original-wordmark.svg" alt="jquery" title="jQuery" />
-          <img src="images/html5-original-wordmark.svg" alt="HTML5" title="Hypertext Markup Language 5" />
-          <img src="images/css3-original-wordmark.svg" alt="CSS3" title="Cascading Stylesheets" />
-          <img src="images/sass-original.svg" alt="SASS" title="Syntactically Awesome Stylesheets" />
-          <img src="images/bootstrap-plain-wordmark.svg" alt="Bootstrap" title="Bootstrap" />
-          <img src="images/react-original-wordmark.svg" alt="React" title="React.js" />
-          <img src="images/php-plain.svg" alt="PHP" title="PHP: Hypertext Preprocessor" />
-          <img src="images/mysql-original-wordmark.svg" alt="MySQL" title="MySQL" />
-          <img src="images/firebase.svg" alt="Firebase" title="Firebase" />
-          <img src="images/drupal-original-wordmark.svg" alt="" title="" />
-          <img src="images/wordpress-original.svg" alt="" title="" />
+  <div id="portfolio-content">
+    <section class="content-box">
+      <h2>Portfolio</h2>
+      <hr/>
+      <div id="application-container">
+        <section class="application-box application-link" id="app-1">
+          <h3>Hole in the Wall Restaurant&nbsp;Finder</h3>
+          <img data-src="images/hole-in-the-wall-restaurant-640.jpg" alt="Hidden Bites" title="Hidden Bites"/>
         </section>
-        <section class="icons">
-          <h3>Tools &amp; Workflow</h3>
-          <hr />
-          <img src="images/git-original-wordmark.svg" alt="Git" title="Git" />
-          <img src="images/github-original-wordmark.svg" alt="GitHub" title="GitHub" />
-          <img src="images/npm-original-wordmark.svg" alt="Node Packet Manager" title="Node Packet Manager" />
-          <img src="images/meistertask.svg" alt="Meistertask" title="Meistertask" />
-          <img src="images/illustrator-plain.svg" alt="Adobe Illustrator" title="Adobe Illustrator" />
-          <img src="images/photoshop-plain.svg" alt="Adobe Photoshop" title="Adobe Photoshop" />
+        <section class="application-box application-link" id="app-2">
+          <h3>Student Grade Table</h3>
+          <img data-src="images/student-grade-table-640.jpg" alt="Student Grade Table" title="Student Grade Table"/>
         </section>
-        <a href="#" class="about-action" target="_blank">Download Resume</a>
-      </section>
-    </div>
-
-    <div id="contact-content">
-      <section class="content-box">
-        <h2>Contact</h2>
-        <hr />
-        <form id="form-contact" method="post" action="email_handler.php">
-          <input type="text" name="name" id="form-name" placeholder="Name" />
-          <div class="form-error" id="form-name-error"></div>
-          <input type="text" name="email" id="form-email" placeholder="Email" />
-          <div class="form-error" id="form-email-error"></div>
-          <input type="text" name="subject" id="form-subject" placeholder="Subject Line" />
-          <div class="form-error" id="form-subject-error"></div>
-          <input type="text" name="value" id="form-value" placeholder="Please leave this field empty" />
-          <textarea name="message" id="form-message" rows="7" placeholder="Message"></textarea>
-          <div class="form-error" id="form-message-error"></div>
-          <button type="submit" id="form-submit">Send<span id="button-indicator" class=""></span></button>
-          <p id="form-submit-message"></p>
-        </form>
-      </section>
-    </div>
-  </main>
-
-  <footer>
-    <div class="content-box">
-      <div class="icons-social">
-        <a href="https://linkedin.com/in/jasonpau" target="_blank">
-          <img src="images/linkedin-plain-white.svg" alt="LinkedIn" title="Connect with me on LinkedIn" />
-        </a>
-        <a href="https://twitter.com/thejasonpau" target="_blank">
-          <img src="images/twitter-plain-white.svg" alt="Twitter" title="See what I'm up to on Twitter" />
-        </a>
-        <a href="https://github.com/jasonpau" target="_blank">
-          <img src="images/github-original-white.svg" alt="GitHub" title="Check out my code on GitHub" />
-        </a>
+        <section class="application-box application-link" id="app-3">
+          <h3>League of Boatwrights</h3>
+          <img data-src="images/league-of-boatwrights-640.jpg" alt="League of Boatwrights"
+               title="League of Boatwrights"/>
+        </section>
+        <section class="application-box application-link" id="app-4">
+          <h3>Connect X<br/>(Coming Soon!)</h3>
+          <img data-src="images/connect-x-640.jpg" alt="Connect X" title="Connect X"/>
+        </section>
       </div>
-      <p>
-        <script type="text/javascript">
-          var a = 'dev@';
-          var b = 'jasonp';
-          var c = 'au.com';
-          var d = 'lto:';
-          document.write('<a href="mai' + d + a + b + c + '?Subject=Hey%20Jason%21%20&Body=I%20was%20looking%20at%20your%20web%20development%20portfolio%20just%20now%20and%20I%20liked%20what%20I%20saw.%20I%20think%20it%20would%20be%20beneficial%20for%20both%20of%20us%20if%20we%20got%20in%20touch.%0A%0AHere%27s%20my%20name%20and%20contact%20info%3A" target="_blank">' + a + b + c + '</a>');
-        </script> |
-        <script type="text/javascript">
-          var a = '949';
-          var b = '415';
-          var c = '8145';
-          var d = 'tel:';
-          document.write('<a href="' + d + a + b + c + '" target="_blank">(' + a + ') ' + b + '-' + c + '</a>');
-        </script>
+    </section>
+  </div>
+
+  <div id="about-content">
+    <section class="content-box">
+      <h2>About Me</h2>
+      <hr/>
+      <p>Howdy! I'm a creative web developer based in Orange County, CA, with a long history of working on both the
+        development and design aspects of websites. I've worked with numerous technologies, languages, and content
+        management systems over the years, with deep involvement in the entire process ranging from start to finish and
+        including ongoing optimization and maintenance.</p>
+      <p>I'm currently looking for a position that will allow me to build websites and applications that are effective,
+        efficient, and user-friendly. With my unique skill set I’m able to work effectively on both the interface and
+        business logic side of each project.</p>
+      <p>On a more personal side, two of my favorite hobbies are backpacking to remote mountain lakes and camping in the
+        wilderness. I really enjoy learning new things and can easily spend hours going down rabbit trails on Wikipedia
+        and Stack Overflow. I also enjoy creative writing, drawing, and eating any kind of licorice.
       </p>
-      <p class="copyright">Copyright &copy; 2017 Jason Pau. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-  <div id="modal-container">
-    <div class="modal" id="modal-1">
-      <div class="button-close">&times;</div>
-      <section class="content-box">
-        <h2>Hole in the Wall Restaurant Finder</h2>
-        <img src="images/hole-in-the-wall-restaurant-1600x900.jpg" alt="" title="" />
-        <p class="modal-links">
-          <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
-        </p>
-        <p>Users can quickly find hole-in-the-wall restaurants in their area based on selected food category.</p>
-        <ul>
-          <li>Worked with a team of four developers to build a completed project.</li>
-          <li>Mobile-first layout and design.</li>
-          <li>Integrates multiple APIs including Yelp, Google Maps, Google Geocoding, and native HTML5 Geolocation. </li>
-        </ul>
-        <button type="button" class="button-close">Close Window</button>
+      <a href="jason-pau-resume.pdf" class="about-action" target="_blank" rel="noopener">Download Resume</a>
+      <section class="icons">
+        <h3>Some of the technologies I use:</h3>
+        <hr/>
+        <img data-src="images/javascript-original.svg" alt="JavaScript" title="JavaScript"/>
+        <img data-src="images/jquery-original-wordmark.svg" alt="jQuery" title="jQuery"/>
+        <img data-src="images/html5-original-wordmark.svg" alt="HTML5" title="Hypertext Markup Language 5"/>
+        <img data-src="images/css3-original-wordmark.svg" alt="CSS3" title="Cascading Stylesheets"/>
+        <img data-src="images/sass-original.svg" alt="SASS" title="Syntactically Awesome Stylesheets"/>
+        <img data-src="images/bootstrap-plain-wordmark.svg" alt="Bootstrap" title="Bootstrap"/>
+        <img data-src="images/react-original-wordmark.svg" alt="React" title="React.js"/>
+        <img data-src="images/redux.svg" alt="Redux" title="Redux"/>
+        <img data-src="images/php-plain.svg" alt="PHP" title="PHP: Hypertext Preprocessor"/>
+        <img data-src="images/mysql-original-wordmark.svg" alt="MySQL" title="MySQL"/>
+        <img data-src="images/drupal-original-wordmark.svg" alt="Drupal 8" title="Drupal 8"/>
+        <img data-src="images/wordpress-original.svg" alt="WordPress" title="WordPress"/>
       </section>
-    </div>
-
-    <div class="modal" id="modal-2">
-      <div class="button-close">&times;</div>
-      <section class="content-box">
-        <h2>Student Grade Table</h2>
-        <img src="images/student-grade-table-1600x900.jpg" alt="" title="" />
-        <p class="modal-links">
-          <a href="https://github.com/jasonpau/student_grade_table_php" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
-        </p>
-        <p>Application for managing a database of students, with their courses and grades.</p>
-        <ul>
-          <li>User Interface and front-end logic built using HTML/CSS/Bootstrap and JavaScript/jQuery.</li>
-          <li>AJAX is used to access back-end RESTful API built in PHP, performing Create/Read/Update/Delete (CRUD) database operations.</li>
-          <li>Users receive visual indicators as AJAX calls wait for a response, with custom messages in case of errors.</li>
-        </ul>
-        <button type="button" class="button-close">Close Window</button>
+      <section class="icons">
+        <h3>Tools &amp; Workflow</h3>
+        <hr/>
+        <img data-src="images/git-original-wordmark.svg" alt="Git" title="Git"/>
+        <img data-src="images/github-original-wordmark.svg" alt="GitHub" title="GitHub"/>
+        <img data-src="images/npm-original-wordmark.svg" alt="Node Packet Manager" title="Node Packet Manager"/>
+        <img data-src="images/meistertask.svg" alt="Meistertask" title="Meistertask"/>
+        <img data-src="images/illustrator-plain.svg" alt="Adobe Illustrator" title="Adobe Illustrator"/>
+        <img data-src="images/photoshop-plain.svg" alt="Adobe Photoshop" title="Adobe Photoshop"/>
       </section>
-    </div>
+      <p>Some of the other technologies and tools I've worked with: Linux, Apache, Node.js, Firebase, Joomla,
+        Sitefinity, Google Analytics, Google PageSpeed Tools, W3C Validator, Adobe InDesign, Adobe Premiere Pro</p>
+    </section>
+  </div>
 
-    <div class="modal" id="modal-3">
-      <div class="button-close">&times;</div>
-      <section class="content-box">
-        <h2>League of Boatwrights</h2>
-        <img src="images/league-of-boatwrights-1600x900.jpg" alt="" title="" />
-        <p class="modal-links">
-          <a href="#" target="_blank">Live</a>
-        </p>
-        <p>Online community for aspiring and experienced small-boat builders.</p>
-        <ul>
-          <li>Developed in Drupal 8 as part of a six person team.</li>
-          <li>Agile development approach with daily standups.</li>
-          <li>Built sections of the website using custom content types and blocks.</li>
-          <li>Created sub-theme, and lead front-end development/design.</li>
-        </ul>
-        <button type="button" class="button-close">Close Window</button>
-      </section>
-    </div>
+  <div id="contact-content">
+    <section class="content-box">
+      <h2>Contact</h2>
+      <hr/>
+      <p>Let's get a conversation started! No obligation, no strings attached, non-GMO, fat-free, </p>
+      <form id="form-contact" method="post" action="email_handler.php">
+        <input type="text" name="name" id="form-name" placeholder="Name" aria-label="name"/>
+        <div class="form-error" id="form-name-error"></div>
+        <input type="text" name="email" id="form-email" placeholder="Email" aria-label="email address"/>
+        <div class="form-error" id="form-email-error"></div>
+        <input type="text" name="subject" id="form-subject" placeholder="Subject Line" aria-label="email subject line"/>
+        <div class="form-error" id="form-subject-error"></div>
+        <input type="text" name="value" id="form-value" placeholder="Please leave this field empty"
+               aria-label="please leave this field empty"/>
+        <textarea name="message" id="form-message" rows="7" placeholder="Message" aria-label="email message"></textarea>
+        <div class="form-error" id="form-message-error"></div>
+        <button type="submit" id="form-submit">Send<span id="button-indicator" class=""></span></button>
+        <p id="form-submit-message"></p>
+      </form>
+    </section>
+  </div>
+</main>
 
-    <div class="modal" id="modal-4">
-      <div class="button-close">&times;</div>
-      <section class="content-box">
-        <h2>Connect X</h2>
-        <img src="images/connect-x-1600x900.jpg" alt="" title="" />
-        <p class="modal-links">
-          <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">Live</a>
-        </p>
-        <p>2 or 3 player Connect 4 game with customizable game board and win conditions.</p>
-        <ul>
-          <li>Led a team of three developers from the planning stages all the way to a completed application.</li>
-          <li>Game board uses HTML/CSS and jQuery, while JavaScript powers the game logic and win condition checks.</li>
-        </ul>
-        <button type="button" class="button-close">Close Window</button>
-      </section>
+<footer>
+  <div class="content-box">
+    <div class="icons-social">
+      <a href="https://linkedin.com/in/jasonpau" target="_blank" rel="noopener">
+        <img data-src="images/linkedin-plain-white.svg" alt="LinkedIn" title="Connect with me on LinkedIn"/>
+      </a>
+      <a href="https://twitter.com/thejasonpau" target="_blank" rel="noopener">
+        <img data-src="images/twitter-plain-white.svg" alt="Twitter" title="See what I'm up to on Twitter"/>
+      </a>
+      <a href="https://github.com/jasonpau" target="_blank" rel="noopener">
+        <img data-src="images/github-original-white.svg" alt="GitHub" title="Check out my code on GitHub"/>
+      </a>
     </div>
-  </div><!-- end modal windows -->
+    <p>
+      <script type="text/javascript">
+        var a = 'dev@';
+        var b = 'jasonp';
+        var c = 'au.io';
+        var d = 'lto:';
+        document.write('<a href="mai' + d + a + b + c + '?Subject=Hey%20Jason%21%20&Body=I%20was%20looking%20at%20your%20web%20development%20portfolio%20just%20now%20and%20I%20liked%20what%20I%20saw.%20I%20think%20it%20would%20be%20beneficial%20for%20both%20of%20us%20if%20we%20got%20in%20touch.%0A%0AHere%27s%20my%20name%20and%20contact%20info%3A" target="_blank" rel="noopener">' + a + b + c + '</a>');
+      </script>
+      |
+      <script type="text/javascript">
+        var a = '949';
+        var b = '415';
+        var c = '8145';
+        var d = 'tel:';
+        document.write('<a href="' + d + a + b + c + '" target="_blank" rel="noopener">(' + a + ') ' + b + '-' + c + '</a>');
+      </script>
+    </p>
+    <p class="copyright">Copyright &copy; 2017 Jason Pau. All Rights Reserved.</p>
+  </div>
+</footer>
 
-  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="js/scripts.js" ></script>
+<div id="modal-container">
+  <div class="modal" id="modal-1">
+    <div class="button-close">&times;</div>
+    <section class="content-box">
+      <h2>Hidden Bites</h2>
+      <img data-src="images/hole-in-the-wall-restaurant-800x450.jpg" alt="" title=""/>
+      <p class="modal-links">
+        <a href="https://github.com/jasonpau/hidden-bites" target="_blank" rel="noopener">GitHub</a> | <a
+              href="https://jasonpau.io/apps/hidden-bites" target="_blank" rel="noopener">Live</a>
+      </p>
+      <p>This application allows users to quickly find hole-in-the-wall restaurants based on a specified food category.
+        A specific location can be searched if desired; otherwise the search results default to the user's current
+        location.</p>
+      <ul>
+        <li>Worked with a team of four developers to build a completed project.</li>
+        <li>Mobile-first layout and design.</li>
+        <li>Integrates multiple APIs including Yelp, Google Maps, Google Place Autocomplete, Google Geocoding, and
+          native HTML5 Geolocation.
+        </li>
+        <li>Input validation and error handling (for both user and system errors).</li>
+      </ul>
+      <button type="button" class="button-close">Close Window</button>
+    </section>
+  </div>
+
+  <div class="modal" id="modal-2">
+    <div class="button-close">&times;</div>
+    <section class="content-box">
+      <h2>Student Grade Table</h2>
+      <img data-src="images/student-grade-table-800x450.jpg" alt="" title=""/>
+      <p class="modal-links">
+        <a href="https://github.com/jasonpau/student_grade_table_php" target="_blank" rel="noopener">GitHub</a>
+      </p>
+      <p>Application for managing a database of students, with their courses and grades.</p>
+      <ul>
+        <li>User Interface and front-end logic built using HTML/CSS/Bootstrap and JavaScript/jQuery.</li>
+        <li>AJAX is used to access back-end RESTful API built in PHP, performing Create/Read/Update/Delete (CRUD)
+          database operations.
+        </li>
+        <li>Users receive visual indicators as AJAX calls wait for a response, with custom messages in case of errors.
+        </li>
+        <li>(Even set up a cron job to reset the student data every day at 2:00 AM.)
+        </li>
+      </ul>
+      <button type="button" class="button-close">Close Window</button>
+    </section>
+  </div>
+
+  <div class="modal" id="modal-3">
+    <div class="button-close">&times;</div>
+    <section class="content-box">
+      <h2>League of Boatwrights</h2>
+      <img data-src="images/league-of-boatwrights-800x450.jpg" alt="" title=""/>
+      <p class="modal-links">
+        <a href="https://jasonpau.io/apps/league-of-boatwrights" target="_blank" rel="noopener">Live</a>
+      </p>
+      <p>Online community for aspiring and experienced small-boat builders, complete with boatwright profiles, boat
+        designs, and individual boat profiles and build logs.</p>
+      <ul>
+        <li>Developed in Drupal 8 as part of a six person team.</li>
+        <li>Created sub-theme, and led front-end development/design.</li>
+        <li>Agile development approach with daily standups.</li>
+        <li>Used custom content types and blocks for various parts of the website.</li>
+      </ul>
+      <button type="button" class="button-close">Close Window</button>
+    </section>
+  </div>
+
+  <div class="modal" id="modal-4">
+    <div class="button-close">&times;</div>
+    <section class="content-box">
+      <h2>Connect X</h2>
+      <img data-src="images/connect-x-1600x900.jpg" alt="" title=""/>
+      <p class="modal-links">
+        Link coming soon!
+      </p>
+      <p>2 or 3 player Connect 4 game with customizable game board and win conditions.</p>
+      <ul>
+        <li>Led a team of three developers from the planning stages all the way to a completed application.</li>
+        <li>Game board uses HTML/CSS and jQuery, while JavaScript powers the game logic and win condition checks.</li>
+      </ul>
+      <button type="button" class="button-close">Close Window</button>
+    </section>
+  </div>
+</div><!-- end modal windows -->
+</div>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/scripts.min.js"></script>
 </body>
 </html>
